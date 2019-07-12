@@ -24,22 +24,28 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     console.log(res)
         res.data.articles.bootstrap.forEach(data =>{        
             container.appendChild(createComponent(data))
+        })
         res.data.articles.javascript.forEach(data => {
             container.appendChild(createComponent(data))
+        })  
         res.data.articles.jquery.forEach(data => {
             container.appendChild(createComponent(data))
+        })
         res.data.articles.node.forEach(data => {
             container.appendChild(createComponent(data))
+        })
         res.data.articles.technology.forEach(data => {
             container.appendChild(createComponent(data))
+            
                     })
                 })
-            })
-        })
-    })
-})
+                
+            
+        
     
-       
+
+    
+
     
 
 
@@ -63,14 +69,18 @@ function createComponent(data) {
     by.textContent = `By: ${data.authorName}`
 
     card.append(title, author, imgContainer, img, by)
-        author.append(imgContainer, img, by)
+    
+    author.append(imgContainer, img, by)
 
     card.classList.add("card")
     title.classList.add("headline")
     author.classList.add('author')
     imgContainer.classList.add("img-container")
-    
+    imgContainer.append(img)
     return card
 }
+
+
+
 
 

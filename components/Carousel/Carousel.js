@@ -7,6 +7,48 @@
     6. Have fun!
 */
 
+const container = document.querySelector(".carousel-container")
+container.appendChild(carousel())
+
+function carousel() {
+
+const circle = document.createElement("div")
+const lButton = document.createElement("div")
+const img1 = document.createElement("img")
+const img2 = document.createElement("img")
+const img3 = document.createElement("img")
+const img4 = document.createElement("img")
+const rButton = document.createElement("div")
+
+circle.append(lButton, img1, img2, img3, img4, rButton)
+
+circle.classList.add("carousel")
+lButton.classList.add("left-button")
+rButton.classList.add("right-button")
+
+img1.src = "./assets/carousel/mountains.jpeg"
+img2.src = "./assets/carousel/computer.jpeg"
+img3.src = "./assets/carousel/trees.jpeg"
+img4.src = "./assets/carousel/turntable.jpeg"
+classList.toggle("carousel")
+
+lButton.clickHandler("click", event => {
+  circle.classList.toggle("carousel")
+})
+
+let i = 0;
+
+
+const count = (array) => {
+    if (i >= array.length) i = 0;
+    array[i].click();
+    i ++;}
+
+return circle
+}
+
+console.log("hi")
+
 /* HTML:
   <div class="carousel">
     <div class="left-button"> < </div>
