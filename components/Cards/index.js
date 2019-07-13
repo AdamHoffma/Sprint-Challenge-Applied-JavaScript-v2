@@ -38,14 +38,9 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
             container.appendChild(createComponent(data))
             
                     })
-                })
-                
+                })           
             
         
-    
-
-    
-
     
 
 

@@ -6,7 +6,7 @@
     5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
-
+/*
 const container = document.querySelector(".carousel-container")
 container.appendChild(carousel())
 
@@ -30,24 +30,33 @@ img1.src = "./assets/carousel/mountains.jpeg"
 img2.src = "./assets/carousel/computer.jpeg"
 img3.src = "./assets/carousel/trees.jpeg"
 img4.src = "./assets/carousel/turntable.jpeg"
-classList.toggle("carousel")
 
-lButton.clickHandler("click", event => {
-  circle.classList.toggle("carousel")
-})
+const imgArray = [img1, img2, img3, img4]
+rButton.addEventListener("click", () => select(right))
+lButton.addEventListener("click", () => select(left))
 
-let i = 0;
+function select(index) {
+  imgArray.forEach(image => image.classList.remove("active"))
+  currentIndex = index(currentIndex)
+  const nextImage = imagArray[currentIndex]
+  nextImage.classList.toggle("active")
+}
 
+function right(currentIndex) {
+  return (currentIndex + 1)
+}
 
-const count = (array) => {
-    if (i >= array.length) i = 0;
-    array[i].click();
-    i ++;}
+function left(currentIndex) {
+  return (currentIndex + 3)
+}
+    
+ 
+console.log(imgArray)
+
 
 return circle
 }
 
-console.log("hi")
 
 /* HTML:
   <div class="carousel">
